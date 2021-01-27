@@ -40,8 +40,8 @@ function requestToScratchServers(opt, headers) {
     });
 
     req.on("error", reject);
+    console.log(opt.body)
     if (opt.body) req.write(opt.body);
-    req.pipe(process.stdout)
     req.end();
   });
 }
