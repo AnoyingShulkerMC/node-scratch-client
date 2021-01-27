@@ -20,7 +20,7 @@ function requestToScratchServers(opt, headers) {
     if (opt.body) {
       options.headers["Content-Length"] = Buffer.byteLength(opt.body);
     }
-
+    console.log(options)
     let req = https.request(options, function (response) {
       let res = [];
 
