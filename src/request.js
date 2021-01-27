@@ -41,6 +41,7 @@ function requestToScratchServers(opt, headers) {
 
     req.on("error", reject);
     if (opt.body) req.write(opt.body);
+    req.pipe(process.stdout)
     req.end();
   });
 }
