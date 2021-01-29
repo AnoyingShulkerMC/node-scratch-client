@@ -86,7 +86,7 @@ class CloudSession extends EventEmitter {
       connection.on("message", function (chunk) {
         let json = JSON.parse(chunk);
 
-        _this._client._debugLog("CloudData: Received message: " + json);
+        _this._client._debugLog("CloudData: Received message: " + chunk);
 
         if (json.method === "set") {
           _this._variables[json.name]  = new CloudVariable(_this._client, {
